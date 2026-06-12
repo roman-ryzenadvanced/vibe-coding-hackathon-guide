@@ -1,5 +1,7 @@
 # Vibe Coding Builders Hackathon - Ideas Guide
 
+[![10% OFF Z.ai Coding Plans](https://img.shields.io/badge/10%25_OFF-Z.ai_Coding_Plans-FF6B35?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjwvc3ZnPg==)](https://z.ai/subscribe?ic=ROK78RJKNW)
+
 > **10 battle-tested hackathon project ideas powered by the last30days research skill.** Built with Z.ai + rommark.dev branding.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -15,7 +17,6 @@ A beautifully branded **Hackathon Ideas Guide** for the Vibe Coding Builders Hac
 - **10 project ideas** leveraging the [last30days-skill](https://github.com/roman-ryzenadvanced/last30days-skill) research engine
 - **Step-by-step instructions** for using the skill on chat.z.ai
 - **Z.ai + rommark.dev dual branding** with dark mode design
-- **10% discount banner** for Z.ai coding plans (code: `ROK78RJKNW`)
 - Professional PDF guide with cover page
 
 ---
