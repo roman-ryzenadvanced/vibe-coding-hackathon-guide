@@ -7,6 +7,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-06-12
+
+### Changed — Repository Refocused as Tutorial
+
+This release repositions the repository from a static "ideas guide" into a **hands-on tutorial** that teaches people how to use the last30days skill to research anything with real data, using hackathons as the example use case.
+
+#### What Changed
+- **README.md** — Completely rewritten as a step-by-step tutorial: "How to Find Hackathon Ideas Using Real Data." Now teaches the method, not just lists ideas.
+- **docs/how-to-use-30d-skill.md** — Expanded into a comprehensive 8-step tutorial covering installation, first query, output modes, comparison mode, idea validation, agent mode, watchlist, and business launch tools.
+- **Repository framing** — Changed from "10 ideas in a PDF" to "learn to research anything with the last30days skill, with hackathons as the example"
+
+#### New Content in README
+- "The Problem Every Hacker Faces" section — explains why guessing ideas fails
+- "What You'll Learn" — 7 concrete learning outcomes
+- "Quick Start: 3 Commands" — fastest path to first validated idea
+- Step-by-step tutorial (7 steps) with exact commands and expected outputs
+- "Real Example: Finding a Hackathon Idea" — full walkthrough from blank page to validated idea
+- "The Same Method Works For Everything" — showing universal applicability beyond hackathons
+- Data sources table with auth requirements
+- Hackathon weekend workflow summary table
+
+#### New Content in how-to-use-30d-skill.md
+- "The Core Idea: Engagement Score > Search Ranking" philosophy section
+- Detailed entity resolution explanation (what happens behind the scenes)
+- Step-by-step walkthrough of the 5-stage research pipeline
+- Idea validation decision rule (Signal Score >= 7/10 across 3+ sources)
+- Business launch tools reference table
+- Prompt variants guide with time estimates
+- "The Method, Summarized" — 7-point checklist
+
+### Design Philosophy
+> This repository should teach, not just list. Every section answers "how do I do this myself?" not just "what ideas exist?" The hackathon context is the example, not the limit.
+
+---
+
 ## [1.0.0] - 2026-06-12
 
 ### Added — Initial Release
