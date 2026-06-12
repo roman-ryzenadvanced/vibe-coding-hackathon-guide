@@ -45,7 +45,7 @@ class TestGuideHtmlStructure:
 
     def test_has_multiple_pages(self):
         page_count = self.content.count('class="page')
-        assert page_count >= 7, f"Expected at least 7 page divs, found {page_count}"
+        assert page_count >= 8, f"Expected at least 8 page divs, found {page_count}"
 
 
 class TestGuideContentSections:
@@ -172,3 +172,32 @@ class TestGuideDataSources:
 
     def test_mentions_tiktok(self):
         assert "TikTok" in self.content, "Must mention TikTok"
+
+
+class TestGuideAgentMode:
+    """Test that Agent Mode on chat.z.ai instructions are present."""
+
+    @pytest.fixture(autouse=True)
+    def setup(self, guide_html_content):
+        self.content = guide_html_content
+
+    def test_has_agent_mode_section(self):
+        assert "AGENT MODE" in self.content, "Must have Agent Mode section"
+
+    def test_has_please_use_this_skill_pattern(self):
+        assert "Please use this skill" in self.content, "Must show the 'Please use this skill' pattern"
+
+    def test_has_skill_github_url(self):
+        assert "github.com/roman-ryzenadvanced/last30days-skill" in self.content, "Must include skill GitHub URL"
+
+    def test_has_chat_z_ai_reference(self):
+        assert "chat.z.ai" in self.content, "Must reference chat.z.ai"
+
+    def test_has_agent_mode_page(self):
+        assert "Use Agent Mode on chat.z.ai" in self.content, "Must have dedicated Agent Mode page"
+
+    def test_has_zero_install_mention(self):
+        assert "zero" in self.content.lower() or "No local install" in self.content or "No terminal" in self.content, "Must mention zero/no-install nature"
+
+    def test_has_pro_tip_specificity(self):
+        assert "Specificity" in self.content or "specific" in self.content.lower(), "Must mention prompt specificity tip"

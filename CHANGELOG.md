@@ -7,6 +7,65 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-06-12
+
+### Added — Agent Mode on chat.z.ai Instructions
+
+This release adds comprehensive documentation for using the last30days skill in Agent Mode on chat.z.ai via the **"Please use this skill (skill URL) to..."** pattern — a zero-install, zero-config way to run the full research pipeline.
+
+#### New Content
+
+**README.md:**
+- "Using Agent Mode on chat.z.ai (The Easy Way)" subsection in Step 6
+- 4 ready-to-paste Agent mode prompts for chat.z.ai (find ideas, compare tools, validate demand, research pain points)
+- "How the 'Please use this skill' Pattern Works" table with 7-step pipeline breakdown
+- Pro tip on prompt specificity (Specificity = better entity resolution = higher signal)
+- Weekend workflow table updated with chat.z.ai Agent mode alternatives for Friday 6 PM and Sunday AM
+
+**guide.html:**
+- New Page 7: "Use Agent Mode on chat.z.ai" — dedicated page with:
+  - The "Please use this skill" pattern explanation card
+  - 4 copy-paste Agent mode prompts (find ideas, compare tools, validate demand, research pain points)
+  - 6-step pipeline visualization (Load → Decompose → Search → Score → Merge → Report)
+  - Pro tip card on specificity
+- Commands reference updated with `Please use this skill` pattern
+- Page renumbered: Page 7→8 (Workflow & Tips), Page 8→9 (Resources + CTA)
+
+**docs/how-to-use-30d-skill.md:**
+- "Using Agent Mode on chat.z.ai (Zero Install)" section with:
+  - The "Please use this skill" pattern explanation
+  - 6 copy-paste prompts for different research tasks
+  - "How the Pattern Works" table (7-step breakdown)
+  - "Agent Mode Output Format" code block showing the structured report shape
+  - "Tips for Better Agent Mode Results" — 5 actionable tips (be specific, include context, ask comparisons, chain queries, save findings)
+- "The Method, Summarized" updated with item 8: Agent mode on chat.z.ai
+
+**docs/skill-commands-reference.md:**
+- New "Agent Mode on chat.z.ai (Zero Install)" section with:
+  - Pattern syntax table
+  - Copy-Paste Templates table (6 task types)
+  - How the Pattern Works (5 steps)
+  - Output Format code block
+  - Tips for Better Results table (5 tips)
+- Quick Reference updated with "Weekend Hackathon on chat.z.ai" and "Deep Research on chat.z.ai" workflows
+
+**docs/hackathon-workflow.md:**
+- New "Agent Mode Shortcut on chat.z.ai" section with:
+  - Friday Evening prompts table (6 PM, 7 PM, 8 PM, 9 PM)
+  - Saturday prompts table (Morning, Afternoon)
+  - Sunday prompts table (Morning)
+  - Note: Each prompt triggers Agent mode automatically
+- Key Tips updated with chat.z.ai Agent mode tip
+
+#### Tests
+- `tests/test_guide_html.py`: Updated page count to >= 8, added `TestGuideAgentMode` class with 7 new tests
+- `tests/test_agent_mode_docs.py`: New test file with 16 tests across 3 classes validating Agent mode content in README, docs/, and guide.html
+
+### Design Decision
+> The "Please use this skill" pattern is the lowest-friction path to using the last30days skill. No terminal, no install, no API keys. Just paste and get research. This makes the skill accessible to people who aren't developers or who want to try it before installing.
+
+---
+
 ## [1.1.0] - 2026-06-12
 
 ### Changed — Repository Refocused as Tutorial

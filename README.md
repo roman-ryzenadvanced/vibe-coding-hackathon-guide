@@ -1,6 +1,6 @@
 # How to Find Hackathon Ideas Using Real Data — A last30days Skill Tutorial
 
-[![10% OFF Z.ai Coding Plans](https://img.shields.io/badge/10%25_OFF-Z.ai_Coding_Plans-FF6B35?style=for-the-badge)](https://z.ai/subscribe?ic=ROK78RJKNW)
+[![Get 10% OFF on Z.ai Coding Plans](https://img.shields.io/badge/Get_10%25_OFF-Z.ai_Coding_Plans-FF6B35?style=for-the-badge)](https://z.ai/subscribe?ic=ROK78RJKNW)
 
 > **Stop guessing what to build.** This tutorial teaches you how to use the [last30days-skill](https://github.com/roman-ryzenadvanced/last30days-skill) to research any topic with real engagement data from 16+ platforms — and find validated hackathon ideas people actually want.
 
@@ -143,6 +143,51 @@ For complex questions that need multi-step investigation:
 
 Agent mode runs autonomously: it decomposes your question, searches all sources, resolves entities, merges clusters, evaluates coverage, and produces a comprehensive brief — without you pressing enter again.
 
+#### Using Agent Mode on chat.z.ai (The Easy Way)
+
+You don't need to install anything locally to use Agent mode. **chat.z.ai** has the skill built in. Just tell the Z.ai agent to use it with the "Please use this skill" pattern:
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about AI developer tools
+```
+
+That's it. The Z.ai agent will:
+1. **Load the skill** automatically from the GitHub URL
+2. **Run Agent mode** autonomously — decompose, search, resolve, merge, score
+3. **Return a complete research report** with Key Findings, synthesis, and stats
+
+**More Agent mode prompts for chat.z.ai:**
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to compare Cursor vs Windsurf vs Bolt for hackathon builders
+```
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to validate if there is real demand for an AI code review tool with fewer false positives
+```
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research what indie hackers are struggling with in 2026 and find hackathon-worthy problems
+```
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find trending developer pain points on Reddit and Hacker News that could become hackathon projects
+```
+
+#### How the "Please use this skill" Pattern Works
+
+| Step | What Happens | You See |
+|------|-------------|---------|
+| **1** | You paste the prompt into chat.z.ai | Your message in the chat |
+| **2** | Z.ai agent loads the skill from the GitHub URL | Agent starts working |
+| **3** | Agent mode runs autonomously — no follow-up needed | Progress indicators |
+| **4** | Agent decomposes your question into sub-queries | Entity resolution |
+| **5** | Searches all 16+ sources in parallel | Source scanning |
+| **6** | Merges cross-source clusters, scores by engagement | Cluster merging |
+| **7** | Returns complete research report | **Key Findings + What I learned + Stats** |
+
+**Pro tip:** The more specific your prompt, the better the research. Instead of "find ideas about AI," say "find hackathon ideas about AI tools that solve developer pain points with code review." Specificity = better entity resolution = higher signal.
+
 ### Step 7: Explore 5 Prompt Modes
 
 The skill ships with 5 specialized prompt variants for different situations:
@@ -264,11 +309,11 @@ For the full Friday-to-Sunday breakdown with exact commands and expected outputs
 
 | Time | What | Command |
 |------|------|---------|
-| **Friday 6 PM** | Scan for trending pain points | `/last30days "developer pain points" --emit=compact` |
+| **Friday 6 PM** | Scan for trending pain points | `/last30days "developer pain points" --emit=compact` *or* `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find trending developer pain points` on chat.z.ai |
 | **Friday 7 PM** | Validate top 2 ideas | `/last30days "your idea" --competitors` |
 | **Friday 9 PM** | Check economics | `python3 scripts/break_even.py --avg-job 25 --profit 10` |
 | **Saturday** | Build, check watchlist every 2h | `watchlist.py scan` |
-| **Sunday AM** | Generate research brief for judges | `/last30days "your topic" --emit=html` |
+| **Sunday AM** | Generate research brief for judges | `/last30days "your topic" --emit=html` *or* `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research your topic and generate a brief` on chat.z.ai |
 | **Sunday PM** | Present with data backing | Show Signal Scores + HTML brief |
 
 ---
@@ -335,7 +380,7 @@ vibe-coding-hackathon-guide/
 │   ├── idea-09-research-agent.md
 │   └── idea-10-revenue-calculator.md
 │
-├── tests/                             # 253 passing tests
+├── tests/                             # 279 passing tests
 ├── scripts/                           # Build scripts
 └── releases/                          # Release notes
 ```

@@ -155,3 +155,34 @@ Present your project with confidence, backed by 48 hours of data-driven decision
 - **Trust the data, not your gut**: If the Signal Score says pivot, pivot. The data has no emotional attachment to your idea.
 - **Use ELI5 mode for teammates**: Not everyone on your team needs the deep analysis. `--eli5` gives them the gist.
 - **Generate HTML briefs for judges**: A formatted market research brief sets your project apart from teams that just built something cool without validating demand.
+- **Use Agent mode on chat.z.ai**: No local install needed. Paste `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to...` into chat.z.ai and the agent runs the full research pipeline autonomously.
+
+---
+
+## Agent Mode Shortcut on chat.z.ai
+
+If you don't have the skill installed locally or prefer the chat.z.ai interface, you can run the entire Friday-Sunday workflow using the **"Please use this skill"** pattern. Here's how to map each workflow step to a single chat.z.ai prompt:
+
+### Friday Evening (chat.z.ai)
+
+| Time | Prompt |
+|------|--------|
+| **6 PM** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to validate these hackathon ideas: AI code review tool, developer portfolio generator, API monitoring dashboard` |
+| **7 PM** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to do a deep scan of the AI code review tools market and compare the top competitors` |
+| **8 PM** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find the biggest gaps in the AI code review market that a hackathon project could exploit` |
+| **9 PM** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research what developers complain most about with existing code review tools` |
+
+### Saturday (chat.z.ai)
+
+| Time | Prompt |
+|------|--------|
+| **Morning** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to scan for any new developments or competitor moves in the AI code review space from the last 24 hours` |
+| **Afternoon** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to generate a research brief about the AI code review market that I can show to hackathon judges` |
+
+### Sunday (chat.z.ai)
+
+| Time | Prompt |
+|------|--------|
+| **Morning** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to produce a final validation report for my hackathon project: an AI code review tool with fewer false positives` |
+
+Each prompt triggers Agent mode automatically — the Z.ai agent loads the skill, runs the full research pipeline, and returns a complete report with Key Findings, synthesis, and stats. No terminal, no config, no API keys needed.

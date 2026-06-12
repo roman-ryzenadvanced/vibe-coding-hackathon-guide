@@ -189,6 +189,92 @@ Agent mode runs autonomously through this workflow:
 
 You can step away and come back to a complete research report. Perfect for pre-hackathon preparation.
 
+### Using Agent Mode on chat.z.ai (Zero Install)
+
+You don't need to install anything to use Agent mode. **chat.z.ai** can load the skill directly from GitHub. Just use the "Please use this skill" pattern:
+
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about AI developer tools
+```
+
+When you paste this into chat.z.ai, the Z.ai agent automatically:
+1. **Loads the skill** from the GitHub URL — no `npx skills add` needed
+2. **Enters Agent mode** — autonomous, no follow-up prompts required
+3. **Runs the full pipeline** — decompose, search, resolve, merge, score
+4. **Returns a complete research report** — Key Findings, What I learned, Stats
+
+#### Copy-Paste Agent Mode Prompts
+
+Here are ready-to-use prompts for different hackathon research tasks. Just paste them into chat.z.ai:
+
+**Find hackathon ideas:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about vibe coding tools
+```
+
+**Compare tools head-to-head:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to compare Cursor vs Windsurf vs Bolt for hackathon builders
+```
+
+**Validate demand for an idea:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to validate if there is real demand for an AI code review tool with fewer false positives
+```
+
+**Research developer pain points:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research what indie hackers are struggling with in 2026 and find hackathon-worthy problems
+```
+
+**Find trending topics on Reddit and HN:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find trending developer pain points on Reddit and Hacker News that could become hackathon projects
+```
+
+**Explore a niche before committing:**
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research the market for AI-powered testing tools and identify gaps for a hackathon project
+```
+
+#### How the "Please use this skill" Pattern Works
+
+| Step | What Happens Behind the Scenes | What You See |
+|------|-------------------------------|--------------|
+| **1** | You paste the prompt into chat.z.ai | Your message in the chat |
+| **2** | Z.ai agent reads the skill URL and loads the skill | Agent starts working |
+| **3** | Agent mode activates — no interactive prompts | Progress indicators |
+| **4** | Agent decomposes your question into sub-queries | Entity resolution begins |
+| **5** | Searches all 16+ sources in parallel | Source scanning |
+| **6** | Merges cross-source clusters, scores by engagement | Cluster merging |
+| **7** | Returns complete research report | **Key Findings + What I learned + Stats** |
+
+#### Agent Mode Output Format
+
+The agent returns a structured report:
+
+```
+## Research Report: {your topic}
+Generated: {date} | Sources: Reddit, X, Bluesky, YouTube, TikTok, HN, Polymarket, Web
+
+### Key Findings
+[3-5 bullet points, highest-signal insights with citations]
+
+### What I learned
+{Full narrative synthesis from the research}
+
+### Stats
+{Source count, items scanned, clusters merged, etc.}
+```
+
+#### Tips for Better Agent Mode Results
+
+1. **Be specific** — "AI code review tools for Python" beats "AI tools"
+2. **Include context** — "for a 48-hour hackathon" helps the agent prioritize actionable signals
+3. **Ask for comparisons** — "compare A vs B vs C" returns structured gap analysis
+4. **Chain queries** — Start broad ("developer pain points"), then go deep on a specific finding
+5. **Save the report** — Copy the Key Findings section into your hackathon README for judges
+
 ---
 
 ## Step 7: Watchlist for Ongoing Monitoring
@@ -275,5 +361,6 @@ The skill returns the same data, same sources, just in plain language with conte
 5. **Share your research** — `--emit=html` generates judge-ready briefs
 6. **Monitor continuously** — Watchlist catches changes while you build
 7. **Apply to anything** — Not just hackathons. Any topic. Any question.
+8. **Use Agent mode on chat.z.ai** — `"Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to..."` — zero install, zero config
 
 **The interactive gate is sacred.** The skill presents data and waits for YOUR decision. You choose the niche. You choose what to build. The AI executes, you decide.

@@ -63,6 +63,61 @@ Complete reference for all last30days-skill flags, modes, and commands with exam
 
 ---
 
+## Agent Mode on chat.z.ai (Zero Install)
+
+The easiest way to use Agent mode — no local installation required. Use the **"Please use this skill"** pattern in chat.z.ai:
+
+| Pattern | Purpose | Example |
+|---|---|---|
+| `Please use this skill {URL} to {task}` | Zero-install Agent mode on chat.z.ai | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about AI tools` |
+
+### Copy-Paste Templates
+
+| Task | Prompt (paste into chat.z.ai) |
+|---|---|
+| **Find hackathon ideas** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about {your topic}` |
+| **Compare tools** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to compare {A} vs {B} vs {C}` |
+| **Validate demand** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to validate if there is real demand for {your idea}` |
+| **Research pain points** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research what {audience} are struggling with` |
+| **Market gap analysis** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research the market for {niche} and identify gaps` |
+| **Trend scanning** | `Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find trending {topic} on Reddit and Hacker News` |
+
+### How the Pattern Works
+
+1. **You paste** the prompt into chat.z.ai
+2. **Z.ai loads** the skill from the GitHub URL automatically
+3. **Agent mode activates** — autonomous, no follow-up needed
+4. **Full pipeline runs** — decompose, search, resolve, merge, score
+5. **Research report returned** — Key Findings + What I learned + Stats
+
+### Output Format
+
+```
+## Research Report: {topic}
+Generated: {date} | Sources: Reddit, X, Bluesky, YouTube, TikTok, HN, Polymarket, Web
+
+### Key Findings
+[3-5 bullet points with citations]
+
+### What I learned
+{Full narrative synthesis}
+
+### Stats
+{Source count, items, clusters}
+```
+
+### Tips for Better Results
+
+| Tip | Why | Example |
+|-----|-----|---------|
+| **Be specific** | Better entity resolution | "AI code review for Python" > "AI tools" |
+| **Include context** | Agent prioritizes actionable signals | "for a 48-hour hackathon" |
+| **Request comparisons** | Returns structured gap analysis | "compare A vs B vs C" |
+| **Chain queries** | Go broad first, then deep | Pain points → validate specific idea |
+| **Save Key Findings** | Great for judge presentations | Copy into your hackathon README |
+
+---
+
 ## ELI5 Mode
 
 | Flag | Applies To | Description | Example |
@@ -112,6 +167,11 @@ ELI5 mode removes jargon, uses analogies, and provides brief contextual explanat
 3. /compare <competitor 1> vs <competitor 2> vs <competitor 3>
 ```
 
+### Weekend Hackathon on chat.z.ai (1 prompt)
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find and validate hackathon ideas about <your theme>
+```
+
 ### Business Launch (6 steps)
 ```
 1. /validate <idea>
@@ -132,4 +192,9 @@ ELI5 mode removes jargon, uses analogies, and provides brief contextual explanat
 ### Deep Research (1 command)
 ```
 /research <your research question> --depth 3 --max-iterations 5
+```
+
+### Deep Research on chat.z.ai (1 prompt)
+```
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research <your research question> in depth and produce a comprehensive report
 ```

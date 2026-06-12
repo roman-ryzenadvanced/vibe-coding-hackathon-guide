@@ -1050,7 +1050,99 @@ code {
   </div>
 </div>
 
-<!-- ==================== PAGE 7: FULL WORKFLOW + TIPS ==================== -->
+<!-- ==================== PAGE 7: AGENT MODE ON chat.z.ai ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Agent Mode</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">04b // AGENT MODE</div>
+  <h2 class="section-title">Use Agent Mode on chat.z.ai</h2>
+  <p class="section-subtitle">No local install needed. Just tell the Z.ai agent to use the skill &mdash; it runs autonomously.</p>
+
+  <div class="idea-card purple">
+    <div class="idea-title">The "Please use this skill" Pattern</div>
+    <div class="idea-description">
+      The easiest way to use the last30days skill is through <strong>chat.z.ai</strong>. No terminal, no install, no configuration. Just paste this pattern:
+    </div>
+  </div>
+
+  <div class="code-block" style="margin-top: 16px;">
+<span class="comment">/* The magic pattern &mdash; just paste this into chat.z.ai */</span><br>
+<span class="command">Please use this skill</span> https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about AI developer tools<br><br>
+<span class="comment">/* The agent does everything automatically */</span><br>
+<span class="comment">// 1. Loads the skill from the GitHub URL</span><br>
+<span class="comment">// 2. Runs Agent mode autonomously</span><br>
+<span class="comment">// 3. Returns: Key Findings + What I learned + Stats</span>
+  </div>
+
+  <div class="howto-step" style="margin-top: 16px;">
+    <div class="howto-step-number">1</div>
+    <div class="howto-step-content">
+      <h4>Copy the Pattern</h4>
+      <p>Replace the topic after "to" with whatever you want to research.</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+<span class="comment">/* Find hackathon ideas */</span><br>
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to find hackathon ideas about vibe coding tools<br><br>
+<span class="comment">/* Compare tools */</span><br>
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to compare Cursor vs Windsurf vs Bolt for hackathon builders<br><br>
+<span class="comment">/* Validate demand */</span><br>
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to validate if there is real demand for an AI code review tool with fewer false positives<br><br>
+<span class="comment">/* Research pain points */</span><br>
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research what indie hackers are struggling with in 2026 and find hackathon-worthy problems
+  </div>
+
+  <div class="howto-step" style="margin-top: 16px;">
+    <div class="howto-step-number">2</div>
+    <div class="howto-step-content">
+      <h4>How It Works</h4>
+      <p>When you paste the pattern, the Z.ai agent automatically loads the skill and runs Agent mode. Here's the pipeline:</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+    <div class="quick-item">
+      <div class="quick-item-label">Load</div>
+      <div class="quick-item-value">Skill loaded from GitHub URL</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Decompose</div>
+      <div class="quick-item-value">Question split into sub-queries</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Search</div>
+      <div class="quick-item-value">16+ sources scanned in parallel</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Score</div>
+      <div class="quick-item-value">Results ranked by engagement</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Merge</div>
+      <div class="quick-item-value">Cross-source clusters combined</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Report</div>
+      <div class="quick-item-value">Key Findings + synthesis + stats</div>
+    </div>
+  </div>
+
+  <div class="idea-card orange" style="margin-top: 16px;">
+    <div class="idea-title">Pro Tip: Be Specific</div>
+    <div class="idea-description">The more specific your prompt, the better the research. Instead of "find ideas about AI," say "find hackathon ideas about AI tools that solve developer pain points with code review." <strong>Specificity = better entity resolution = higher signal.</strong></div>
+  </div>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 7</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 8: FULL WORKFLOW + TIPS ==================== -->
 <div class="page content-page">
   <div class="page-header">
     <span class="page-header-title">Workflow & Tips</span>
@@ -1107,11 +1199,11 @@ code {
 
   <div class="page-footer">
     <span>z.ai &times; rommark.dev</span>
-    <span>Page 7</span>
+    <span>Page 8</span>
   </div>
 </div>
 
-<!-- ==================== PAGE 8: RESOURCES + CTA ==================== -->
+<!-- ==================== PAGE 9: RESOURCES + CTA ==================== -->
 <div class="page content-page">
   <div class="page-header">
     <span class="page-header-title">Resources</span>
@@ -1134,6 +1226,8 @@ code {
 /last30days "topic" --competitors<br><br>
 <span class="comment"># Agent mode (autonomous)</span><br>
 /last30days "topic" --agent<br><br>
+<span class="comment"># Agent mode on chat.z.ai (no install needed!)</span><br>
+Please use this skill https://github.com/roman-ryzenadvanced/last30days-skill to research your topic<br><br>
 <span class="comment"># ELI5 mode</span><br>
 /last30days "topic" --eli5
   </div>
@@ -1177,7 +1271,7 @@ code {
 
   <div class="page-footer">
     <span>z.ai &times; rommark.dev</span>
-    <span>Page 8</span>
+    <span>Page 9</span>
   </div>
 </div>
 
