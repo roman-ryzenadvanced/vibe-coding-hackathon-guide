@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding Builders Hackathon - Ideas Guide</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --zai-primary: #6C5CE7;
+  --zai-primary-light: #A29BFE;
+  --zai-primary-dark: #4834D4;
+  --zai-accent: #00CEC9;
+  --zai-accent-light: #55EFC4;
+  --zai-dark: #0A0A1A;
+  --zai-darker: #060612;
+  --zai-surface: #12122A;
+  --zai-surface-light: #1A1A3E;
+  --zai-border: #2D2D5E;
+  --zai-text: #E8E8F0;
+  --zai-text-muted: #8888AA;
+  --rommark-primary: #FF6B35;
+  --rommark-accent: #FFB347;
+  --gradient-zai: linear-gradient(135deg, #6C5CE7, #00CEC9);
+  --gradient-rommark: linear-gradient(135deg, #FF6B35, #FFB347);
+  --gradient-blend: linear-gradient(135deg, #6C5CE7, #FF6B35, #00CEC9);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--zai-darker);
+  color: var(--zai-text);
+  line-height: 1.6;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  background: var(--zai-dark);
+}
+
+.page:last-child { page-break-after: auto; }
+
+/* ========== COVER PAGE ========== */
+.cover-page {
+  background: radial-gradient(ellipse at 20% 50%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(0, 206, 201, 0.1) 0%, transparent 40%),
+              radial-gradient(ellipse at 60% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 40%),
+              var(--zai-darker);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.cover-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236C5CE7' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.badge-banner {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #FF6B35, #FFB347);
+  color: #0A0A1A;
+  padding: 10px 32px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.badge-banner:hover {
+  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(255, 107, 53, 0.7); }
+}
+
+.cover-content {
+  position: relative;
+  z-index: 5;
+  padding: 60px 50px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.brand-logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand-logo.zai {
+  background: var(--gradient-zai);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-logo.rommark {
+  background: var(--gradient-rommark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-plus {
+  font-size: 20px;
+  color: var(--zai-text-muted);
+  font-weight: 300;
+}
+
+.cover-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--zai-accent);
+  margin-bottom: 16px;
+}
+
+.cover-title {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #CCCCDD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cover-title span {
+  background: var(--gradient-zai);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  color: var(--zai-text-muted);
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--zai-text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cover-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cover-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-purple { background: var(--zai-primary); }
+.dot-teal { background: var(--zai-accent); }
+.dot-orange { background: var(--rommark-primary); }
+
+.cover-ghost {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-size: 180px;
+  font-weight: 900;
+  color: rgba(108, 92, 231, 0.04);
+  line-height: 1;
+  letter-spacing: -8px;
+  z-index: 1;
+}
+
+/* ========== CONTENT PAGES ========== */
+.content-page {
+  background: var(--zai-dark);
+  padding: 40px 48px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--zai-border);
+}
+
+.page-header-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--zai-primary-light);
+}
+
+.page-header-brand {
+  font-size: 11px;
+  color: var(--zai-text-muted);
+  letter-spacing: 1px;
+}
+
+.section-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--zai-accent);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #FFFFFF, #AAAACC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--zai-text-muted);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* Idea Cards */
+.idea-card {
+  background: var(--zai-surface);
+  border: 1px solid var(--zai-border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.idea-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.idea-card.purple::before { background: var(--gradient-zai); }
+.idea-card.teal::before { background: var(--zai-accent); }
+.idea-card.orange::before { background: var(--gradient-rommark); }
+
+.idea-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.idea-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--zai-primary-light);
+  background: rgba(108, 92, 231, 0.15);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.idea-difficulty {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.difficulty-beginner {
+  color: var(--zai-accent-light);
+  background: rgba(85, 239, 196, 0.12);
+}
+
+.difficulty-intermediate {
+  color: var(--zai-primary-light);
+  background: rgba(162, 155, 254, 0.12);
+}
+
+.difficulty-advanced {
+  color: var(--rommark-accent);
+  background: rgba(255, 179, 71, 0.12);
+}
+
+.idea-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+}
+
+.idea-description {
+  font-size: 13px;
+  color: var(--zai-text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.idea-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: var(--zai-surface-light);
+  color: var(--zai-accent);
+  border: 1px solid rgba(0, 206, 201, 0.2);
+}
+
+/* Stats Row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--zai-surface);
+  border: 1px solid var(--zai-border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--gradient-zai);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--zai-text-muted);
+}
+
+/* How-To Section */
+.howto-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.howto-step-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--zai-accent);
+  min-width: 32px;
+  height: 32px;
+  background: rgba(0, 206, 201, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.howto-step-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.howto-step-content p {
+  font-size: 12px;
+  color: var(--zai-text-muted);
+  line-height: 1.5;
+}
+
+/* Code Block */
+.code-block {
+  background: var(--zai-darker);
+  border: 1px solid var(--zai-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--zai-accent-light);
+  overflow-x: auto;
+}
+
+.code-block .comment { color: #5C6370; }
+.code-block .keyword { color: #C678DD; }
+.code-block .string { color: #98C379; }
+.code-block .command { color: var(--zai-accent); }
+
+/* CTA Section */
+.cta-box {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(0, 206, 201, 0.1));
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cta-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: var(--gradient-zai);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-text {
+  font-size: 13px;
+  color: var(--zai-text-muted);
+  margin-bottom: 14px;
+}
+
+.cta-link {
+  display: inline-block;
+  background: var(--gradient-zai);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Discount Banner */
+.discount-banner {
+  background: linear-gradient(135deg, #FF6B35, #FFB347);
+  border-radius: 10px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+  text-decoration: none;
+}
+
+.discount-banner-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0A0A1A;
+  letter-spacing: 0.5px;
+}
+
+.discount-banner-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(10, 10, 26, 0.2);
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: #0A0A1A;
+}
+
+/* Source Table */
+.source-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0;
+  font-size: 12px;
+}
+
+.source-table th {
+  background: var(--zai-surface-light);
+  color: var(--zai-primary-light);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--zai-border);
+}
+
+.source-table th:first-child { border-radius: 8px 0 0 0; }
+.source-table th:last-child { border-radius: 0 8px 0 0; }
+
+.source-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(45, 45, 94, 0.5);
+  color: var(--zai-text);
+}
+
+.source-table tr:last-child td { border-bottom: none; }
+
+.source-table .source-name {
+  font-weight: 600;
+  color: var(--zai-accent);
+}
+
+/* Footer */
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--zai-text-muted);
+  letter-spacing: 0.5px;
+  padding-top: 12px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(45, 45, 94, 0.3);
+}
+
+/* Decorative Elements */
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.glow-purple {
+  width: 200px;
+  height: 200px;
+  background: rgba(108, 92, 231, 0.08);
+  top: -50px;
+  right: -50px;
+}
+
+.glow-teal {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 206, 201, 0.06);
+  bottom: 50px;
+  left: -30px;
+}
+
+/* Quick Reference Grid */
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.quick-item {
+  background: var(--zai-surface);
+  border: 1px solid var(--zai-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.quick-item-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--zai-primary-light);
+  margin-bottom: 4px;
+}
+
+.quick-item-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* Workflow diagram */
+.workflow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.workflow-step {
+  background: var(--zai-surface);
+  border: 1px solid var(--zai-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--zai-accent);
+  text-align: center;
+}
+
+.workflow-arrow {
+  color: var(--zai-text-muted);
+  font-size: 16px;
+}
+
+/* Inline code */
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: rgba(108, 92, 231, 0.15);
+  color: var(--zai-primary-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- Cover page is generated separately -->
+
+<!-- ==================== PAGE 2: WHY + SKILL OVERVIEW ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Vibe Coding Builders Hackathon</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">01 // WHY THIS GUIDE</div>
+  <h2 class="section-title">Build What People Actually Want</h2>
+  <p class="section-subtitle">Stop guessing. Use real engagement signals from 16+ platforms to validate your hackathon project before you write a single line of code.</p>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">16+</div>
+      <div class="stat-label">Data Sources</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">1,012</div>
+      <div class="stat-label">Tests Passing</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">30d</div>
+      <div class="stat-label">Launch Window</div>
+    </div>
+  </div>
+
+  <div class="idea-card purple">
+    <div class="idea-title">What is the last30days-skill?</div>
+    <div class="idea-description">
+      A two-in-one AI skill that researches what people actually say about any topic across Reddit, X/Twitter, YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, Bluesky, TruthSocial, Threads, Pinterest, Digg, Perplexity, Xiaohongshu, and the web. It scores results by real engagement (upvotes, likes, views, real money odds) and synthesizes everything into one grounded brief. The business launch system then finds validated opportunities from those signals and generates everything you need to launch in 30 days or less.
+    </div>
+  </div>
+
+  <div class="quick-grid">
+    <div class="quick-item">
+      <div class="quick-item-label">Engine</div>
+      <div class="quick-item-value">Multi-source parallel search</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Scoring</div>
+      <div class="quick-item-value">Engagement-weighted signals</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Output</div>
+      <div class="quick-item-value">Ranked evidence clusters</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Launch</div>
+      <div class="quick-item-value">30-day business timeline</div>
+    </div>
+  </div>
+
+  <a href="https://z.ai/subscribe?ic=ROK78RJKNW" class="discount-banner">
+    <span class="discount-banner-text">10% OFF Z.ai Coding Plans</span>
+    <span class="discount-banner-code">ROK78RJKNW</span>
+  </a>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 2</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: IDEAS 1-4 ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Hackathon Ideas</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">02 // PROJECT IDEAS</div>
+  <h2 class="section-title">10 Hackathon-Worthy Builds</h2>
+  <p class="section-subtitle">Each idea leverages the last30days-skill's research engine to find real demand before you build.</p>
+
+  <div class="idea-card purple">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 01</span>
+      <span class="idea-difficulty difficulty-beginner">Beginner</span>
+    </div>
+    <div class="idea-title">Trend-to-App Builder</div>
+    <div class="idea-description">Use the signal scanner to find trending pain points across Reddit, X, and TikTok, then auto-generate a vibe-coded micro-app that solves the problem. The research engine surfaces what people are actively complaining about; your app addresses it. Think "lazy dev meets real-time demand."</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">last30days</span>
+      <span class="tech-tag">Next.js</span>
+      <span class="tech-tag">z.ai GLM</span>
+      <span class="tech-tag">Vercel</span>
+    </div>
+  </div>
+
+  <div class="idea-card teal">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 02</span>
+      <span class="idea-difficulty difficulty-intermediate">Intermediate</span>
+    </div>
+    <div class="idea-title">Competitor Intelligence Dashboard</div>
+    <div class="idea-description">Build a real-time A/B/C comparison tool using the comparison mode. Feed it "Tool A vs Tool B vs Tool C" and get head-to-head tables with engagement scores from every platform. Add a watchlist that monitors for changes and delivers daily Slack digests when sentiment shifts. Perfect for indie hackers tracking their niche.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">comparison-mode</span>
+      <span class="tech-tag">watchlist</span>
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">Slack API</span>
+    </div>
+  </div>
+
+  <div class="idea-card orange">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 03</span>
+      <span class="idea-difficulty difficulty-beginner">Beginner</span>
+    </div>
+    <div class="idea-title">Developer Pulse Newsletter</div>
+    <div class="idea-description">Auto-generate a weekly "Dev Pulse" digest by scanning Hacker News, GitHub trending repos, and Reddit r/programming with the briefing engine. Surface the top 5 stories, 3 emerging tools, and 1 controversial take each week. Use HTML brief output for beautiful email-ready formatting. Zero manual curation.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">briefing.py</span>
+      <span class="tech-tag">watchlist.py</span>
+      <span class="tech-tag">HTML briefs</span>
+      <span class="tech-tag">Mailchimp</span>
+    </div>
+  </div>
+
+  <div class="idea-card purple">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 04</span>
+      <span class="idea-difficulty difficulty-advanced">Advanced</span>
+    </div>
+    <div class="idea-title">Niche Discovery Bot for Indie Hackers</div>
+    <div class="idea-description">Build a conversational bot that guides indie hackers through the full signal-scan-to-business workflow. The bot uses the interactive gate pattern: it presents scored opportunities, waits for the user to choose, then generates a complete micro-business plan with unit economics, landing page, and 30-day timeline. Think "YC in a Discord bot."</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">interactive-gate</span>
+      <span class="tech-tag">unit-economics</span>
+      <span class="tech-tag">landing-page-factory</span>
+      <span class="tech-tag">Discord.py</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 3</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: IDEAS 5-8 ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Hackathon Ideas</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">02 // PROJECT IDEAS (CONTINUED)</div>
+
+  <div class="idea-card teal">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 05</span>
+      <span class="idea-difficulty difficulty-intermediate">Intermediate</span>
+    </div>
+    <div class="idea-title">Micro-SaaS Launch Pad</div>
+    <div class="idea-description">Combine the signal scanner with the landing page factory and ad launch playbook into a one-click SaaS launcher. Pick a niche from the scored list, and the system generates a landing page, calculates unit economics, creates an ad plan, and builds your 30-day timeline automatically. From idea to live in 24 hours.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">signal-scanner</span>
+      <span class="tech-tag">landing-page-factory</span>
+      <span class="tech-tag">ad-playbook</span>
+      <span class="tech-tag">timeline-system</span>
+    </div>
+  </div>
+
+  <div class="idea-card orange">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 06</span>
+      <span class="idea-difficulty difficulty-beginner">Beginner</span>
+    </div>
+    <div class="idea-title">Social Signal Validator</div>
+    <div class="idea-description">Validate any hackathon idea in 60 seconds. Paste your concept, and the tool searches Reddit, X, and HN for evidence that people want it. Returns a "Signal Score" (0-10) with the actual quotes and engagement metrics that prove demand exists or doesn't. Kill bad ideas fast before you waste your hackathon weekend.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">quick-scan</span>
+      <span class="tech-tag">engagement-scoring</span>
+      <span class="tech-tag">Streamlit</span>
+      <span class="tech-tag">Python</span>
+    </div>
+  </div>
+
+  <div class="idea-card purple">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 07</span>
+      <span class="idea-difficulty difficulty-advanced">Advanced</span>
+    </div>
+    <div class="idea-title">Pivot Predictor</div>
+    <div class="idea-description">Turn the failure/pivot protocol into an interactive diagnostic tool. Connect it to your live product metrics (ad CTR, conversion rate, bounce rate) and it auto-detects which of the 6 failure modes you are heading toward, then prescribes exact pivot actions with timelines. "If CTR less than 1% after 7 days, switch to community-led growth."</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">failure-pivot</span>
+      <span class="tech-tag">signal-scanner</span>
+      <span class="tech-tag">Analytics API</span>
+      <span class="tech-tag">React</span>
+    </div>
+  </div>
+
+  <div class="idea-card teal">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 08</span>
+      <span class="idea-difficulty difficulty-intermediate">Intermediate</span>
+    </div>
+    <div class="idea-title">Provider Marketplace Finder</div>
+    <div class="idea-description">Use data reconnaissance + provider sourcing to build a hyperlocal marketplace finder. Enter your city and service type (cleaning, tutoring, repairs) and the tool builds a real market map with contactable providers, pricing intelligence, and quality signals. Think "Airbnb for gig workers" powered by real Reddit and Facebook data.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">data-recon</span>
+      <span class="tech-tag">provider-sourcing</span>
+      <span class="tech-tag">local-channel-mapper</span>
+      <span class="tech-tag">Next.js</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 5: IDEAS 9-10 + DATA SOURCES ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Hackathon Ideas</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">02 // PROJECT IDEAS (CONTINUED)</div>
+
+  <div class="idea-card orange">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 09</span>
+      <span class="idea-difficulty difficulty-advanced">Advanced</span>
+    </div>
+    <div class="idea-title">AI Research Agent for Hackathons</div>
+    <div class="idea-description">Build an autonomous research agent that uses agent mode to investigate hackathon topics end-to-end. Give it a theme like "fintech for Gen Z" and it resolves key entities, searches all 16+ sources in parallel, clusters cross-source stories, ranks by engagement, and produces a shareable HTML brief with citations. Teammates get the brief in Slack before the hackathon starts.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">agent-mode</span>
+      <span class="tech-tag">entity-resolution</span>
+      <span class="tech-tag">cluster-merge</span>
+      <span class="tech-tag">HTML briefs</span>
+    </div>
+  </div>
+
+  <div class="idea-card purple">
+    <div class="idea-card-header">
+      <span class="idea-number">IDEA 10</span>
+      <span class="idea-difficulty difficulty-intermediate">Intermediate</span>
+    </div>
+    <div class="idea-title">Vibe Coder Revenue Calculator</div>
+    <div class="idea-description">A beautiful web tool that wraps break_even.py and niche_validator.py into a visual calculator. Enter your niche, location, and budget. Get break-even volume, margin analysis, runway projection, and a 12-criteria viability score. Pair it with real-time signal data from the research engine so the numbers are backed by actual market signals, not guesses.</div>
+    <div class="idea-tech-stack">
+      <span class="tech-tag">break_even.py</span>
+      <span class="tech-tag">niche_validator.py</span>
+      <span class="tech-tag">signal_score.py</span>
+      <span class="tech-tag">Next.js</span>
+    </div>
+  </div>
+
+  <div class="section-number" style="margin-top: 24px;">03 // DATA SOURCES</div>
+  <h2 class="section-title" style="font-size: 22px;">16+ Platforms at Your Fingertips</h2>
+
+  <table class="source-table">
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>Signal Type</th>
+        <th>Auth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="source-name">Reddit</td><td>Top comments + upvotes</td><td>Free</td></tr>
+      <tr><td class="source-name">X / Twitter</td><td>Threads, reactions, hot takes</td><td>Cookies/API</td></tr>
+      <tr><td class="source-name">YouTube</td><td>Transcripts + top comments</td><td>yt-dlp</td></tr>
+      <tr><td class="source-name">TikTok</td><td>Viral engagement signals</td><td>ScrapeCreators</td></tr>
+      <tr><td class="source-name">Hacker News</td><td>Developer consensus</td><td>Free</td></tr>
+      <tr><td class="source-name">Polymarket</td><td>Real-money odds</td><td>Free</td></tr>
+      <tr><td class="source-name">GitHub</td><td>Stars, PRs, release velocity</td><td>Free</td></tr>
+      <tr><td class="source-name">Instagram</td><td>Reels + transcripts</td><td>ScrapeCreators</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 5</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 6: HOW TO USE THE SKILL ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">How to Use the Skill</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">04 // GETTING STARTED</div>
+  <h2 class="section-title">Use the 30-Day Skill on chat.z.ai</h2>
+  <p class="section-subtitle">Get unlimited hackathon ideas by chatting with the Z.ai agent using the last30days skill from GitHub.</p>
+
+  <div class="howto-step">
+    <div class="howto-step-number">1</div>
+    <div class="howto-step-content">
+      <h4>Install the Skill</h4>
+      <p>Open your terminal and run the skill installer for your agent host:</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+<span class="comment"># Install for any agent host (Claude Code, Codex, Cursor, etc.)</span><br>
+<span class="command">npx</span> skills add roman-ryzenadvanced/last30days-skill -g<br><br>
+<span class="comment"># Or install standalone</span><br>
+<span class="command">git</span> clone https://github.com/roman-ryzenadvanced/last30days-skill.git
+  </div>
+
+  <div class="howto-step">
+    <div class="howto-step-number">2</div>
+    <div class="howto-step-content">
+      <h4>Use on chat.z.ai</h4>
+      <p>Once installed, open chat.z.ai and invoke the skill with natural language prompts. The agent will research across 16+ platforms and return scored results.</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+<span class="comment"># Research any topic</span><br>
+/last30days vibe coding tools<br><br>
+<span class="comment"># Compare tools head-to-head</span><br>
+/last30days Cursor vs Windsurf vs Bolt<br><br>
+<span class="comment"># Auto-discover competitors</span><br>
+/last30days "AI code editors" --competitors<br><br>
+<span class="comment"># Get business ideas from signals</span><br>
+/last30days "micro-SaaS for developers"<br><br>
+<span class="comment"># Quick scan for opportunities</span><br>
+/last30days "indie hacker pain points" --emit=compact
+  </div>
+
+  <div class="howto-step">
+    <div class="howto-step-number">3</div>
+    <div class="howto-step-content">
+      <h4>Explore Prompt Variants</h4>
+      <p>The skill ships with 5 specialized prompt modes for different use cases:</p>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+    <div class="quick-item">
+      <div class="quick-item-label">Quick Scan</div>
+      <div class="quick-item-value">Top 5 opportunities in 5 min</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Deep Dive</div>
+      <div class="quick-item-value">Single-niche full analysis</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Pivot</div>
+      <div class="quick-item-value">Diagnose and fix failing ideas</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Scale</div>
+      <div class="quick-item-value">Growth path for working ideas</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">Workshop</div>
+      <div class="quick-item-value">20-min teaching script</div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-item-label">ELI5</div>
+      <div class="quick-item-value">Plain-language synthesis</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 6</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 7: FULL WORKFLOW + TIPS ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Workflow & Tips</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">05 // THE BUILD WORKFLOW</div>
+  <h2 class="section-title">From Signal to Shipping</h2>
+  <p class="section-subtitle">Follow this proven 5-step workflow to go from research to a live product in 30 days.</p>
+
+  <div class="workflow-steps">
+    <div class="workflow-step">Scan Signals</div>
+    <span class="workflow-arrow">&rarr;</span>
+    <div class="workflow-step">Choose Niche</div>
+    <span class="workflow-arrow">&rarr;</span>
+    <div class="workflow-step">Data Recon</div>
+    <span class="workflow-arrow">&rarr;</span>
+    <div class="workflow-step">Find Providers</div>
+    <span class="workflow-arrow">&rarr;</span>
+    <div class="workflow-step">Launch & Test</div>
+  </div>
+
+  <div class="idea-card teal">
+    <div class="idea-title">Hackathon Weekend Cheat Sheet</div>
+    <div class="idea-description">
+      <strong>Day 1 (Friday Night):</strong> Run <code>/last30days "your hackathon theme" --emit=compact</code> to find the highest-signal idea. Use <code>--competitors</code> to see what already exists. Pick your niche at the interactive gate.<br><br>
+      <strong>Day 2 (Saturday):</strong> Build the core feature. Use the landing page factory for your demo page. Run the unit economics calculator to prove viability. Generate your 30-day timeline.<br><br>
+      <strong>Day 3 (Sunday):</strong> Polish the demo, create a shareable HTML brief of your research findings, and present with real engagement data backing every design decision.
+    </div>
+  </div>
+
+  <div class="section-number" style="margin-top: 20px;">06 // PRO TIPS</div>
+  <h2 class="section-title" style="font-size: 24px;">Winning Strategies</h2>
+
+  <div class="idea-card purple">
+    <div class="idea-title">Show Your Research</div>
+    <div class="idea-description">Judges love data-backed decisions. Use <code>--emit=html</code> to generate a shareable HTML brief showing exactly what Reddit, X, and HN users are saying about the problem you solve. Real quotes with engagement metrics beat slides every time.</div>
+  </div>
+
+  <div class="idea-card orange">
+    <div class="idea-title">Use Comparison Mode</div>
+    <div class="idea-description">Run <code>/last30days "Your App vs Competitor A vs Competitor B"</code> to produce a head-to-head comparison table. This shows judges you understand the landscape and have a genuine gap to exploit.</div>
+  </div>
+
+  <div class="idea-card teal">
+    <div class="idea-title">Watchlist for Live Demos</div>
+    <div class="idea-description">Set up <code>watchlist.py</code> before the hackathon so you can show live trend monitoring during your demo. "This alert came in 2 hours ago: sentiment on X shifted 15% positive about AI code editors." Real-time data in a demo is unforgettable.</div>
+  </div>
+
+  <a href="https://z.ai/subscribe?ic=ROK78RJKNW" class="discount-banner">
+    <span class="discount-banner-text">Get 10% OFF Z.ai Coding Plans</span>
+    <span class="discount-banner-code">ROK78RJKNW</span>
+  </a>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 7</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 8: RESOURCES + CTA ==================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <span class="page-header-title">Resources</span>
+    <span class="page-header-brand">z.ai &times; rommark.dev</span>
+  </div>
+
+  <div class="section-number">07 // QUICK REFERENCE</div>
+  <h2 class="section-title">Skill Commands Reference</h2>
+
+  <div class="code-block">
+<span class="comment"># Basic research</span><br>
+/last30days "topic here"<br><br>
+<span class="comment"># Compact output (fast)</span><br>
+/last30days "topic" --emit=compact<br><br>
+<span class="comment"># Full HTML brief</span><br>
+/last30days "topic" --emit=html<br><br>
+<span class="comment"># Compare 3+ entities</span><br>
+/last30days "A vs B vs C"<br><br>
+<span class="comment"># Auto-discover competitors</span><br>
+/last30days "topic" --competitors<br><br>
+<span class="comment"># Agent mode (autonomous)</span><br>
+/last30days "topic" --agent<br><br>
+<span class="comment"># ELI5 mode</span><br>
+/last30days "topic" --eli5
+  </div>
+
+  <div class="section-number" style="margin-top: 24px;">08 // KEY LINKS</div>
+  <h2 class="section-title" style="font-size: 24px;">Essential Resources</h2>
+
+  <table class="source-table">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="source-name">GitHub Repo</td><td>github.com/roman-ryzenadvanced/last30days-skill</td></tr>
+      <tr><td class="source-name">Z.ai Chat</td><td>chat.z.ai</td></tr>
+      <tr><td class="source-name">Z.ai Coding Plans</td><td>z.ai/subscribe?ic=ROK78RJKNW</td></tr>
+      <tr><td class="source-name">rommark.dev</td><td>rommark.dev</td></tr>
+      <tr><td class="source-name">Skill Install</td><td>npx skills add roman-ryzenadvanced/last30days-skill -g</td></tr>
+      <tr><td class="source-name">Config Guide</td><td>CONFIGURATION.md (in repo)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cta-box">
+    <div class="cta-title">Ready to Build?</div>
+    <div class="cta-text">Install the last30days skill, fire up chat.z.ai, and let real engagement data guide your next hackathon project.</div>
+    <a href="https://z.ai/subscribe?ic=ROK78RJKNW" class="cta-link">Get 10% OFF Z.ai Plans &rarr;</a>
+  </div>
+
+  <div class="idea-card purple" style="margin-top: 20px;">
+    <div class="idea-title">The Philosophy</div>
+    <div class="idea-description">
+      <strong>Engagement score &gt; search ranking.</strong> Build where the conversation is happening.<br>
+      <strong>Social relevancy, not SEO relevancy.</strong> Upvotes and likes, not keyword matches.<br>
+      <strong>Start messy, iterate fast.</strong> $50 is enough to start.<br>
+      <strong>Collaboration over generation.</strong> You decide, the AI executes.<br>
+      <strong>The interactive gate is sacred.</strong> Never skip it, never auto-pick.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>z.ai &times; rommark.dev</span>
+    <span>Page 8</span>
+  </div>
+</div>
+
+</body>
+</html>

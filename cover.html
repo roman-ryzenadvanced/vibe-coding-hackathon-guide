@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding Builders Hackathon - Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --zai-primary: #6C5CE7;
+  --zai-primary-light: #A29BFE;
+  --zai-accent: #00CEC9;
+  --zai-accent-light: #55EFC4;
+  --zai-dark: #0A0A1A;
+  --zai-darker: #060612;
+  --zai-text: #E8E8F0;
+  --zai-text-muted: #8888AA;
+  --rommark-primary: #FF6B35;
+  --rommark-accent: #FFB347;
+  --gradient-zai: linear-gradient(135deg, #6C5CE7, #00CEC9);
+  --gradient-rommark: linear-gradient(135deg, #FF6B35, #FFB347);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 210mm;
+  height: 297mm;
+  background: #060612;
+}
+
+.poster {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 50%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(0, 206, 201, 0.1) 0%, transparent 40%),
+              radial-gradient(ellipse at 60% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 40%),
+              #060612;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.poster::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236C5CE7' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.badge-banner {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #FF6B35, #FFB347);
+  color: #0A0A1A;
+  padding: 12px 36px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 5;
+  padding: 60px 50px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.brand-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand-logo.zai {
+  background: linear-gradient(135deg, #6C5CE7, #00CEC9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-logo.rommark {
+  background: linear-gradient(135deg, #FF6B35, #FFB347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-plus {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  color: #8888AA;
+  font-weight: 300;
+}
+
+.cover-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00CEC9;
+  margin-bottom: 20px;
+}
+
+.cover-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #CCCCDD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cover-title span {
+  background: linear-gradient(135deg, #6C5CE7, #00CEC9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cover-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #8888AA;
+  font-weight: 400;
+  max-width: 520px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #8888AA;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cover-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cover-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-purple { background: #6C5CE7; }
+.dot-teal { background: #00CEC9; }
+.dot-orange { background: #FF6B35; }
+
+.cover-ghost {
+  position: absolute;
+  bottom: 36px;
+  right: 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 200px;
+  font-weight: 900;
+  color: rgba(108, 92, 231, 0.04);
+  line-height: 1;
+  letter-spacing: -8px;
+  z-index: 1;
+}
+
+.cover-bottom {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #5C5C80;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <a href="https://z.ai/subscribe?ic=ROK78RJKNW" class="badge-banner">
+    10% OFF Z.ai Coding Plans &#8594; Code: ROK78RJKNW
+  </a>
+  <div class="cover-content">
+    <div class="brand-row">
+      <span class="brand-logo zai">z.ai</span>
+      <span class="brand-plus">&times;</span>
+      <span class="brand-logo rommark">rommark.dev</span>
+    </div>
+    <div class="cover-kicker">Hackathon Ideas Guide</div>
+    <h1 class="cover-title">VIBE CODING<br>BUILDERS<br><span>HACKATHON</span></h1>
+    <p class="cover-subtitle">10 battle-tested project ideas powered by the last30days research skill. From signal scanning to micro-SaaS, build what people actually want.</p>
+    <div class="cover-meta">
+      <span><span class="cover-dot dot-purple"></span> 10 Ideas</span>
+      <span><span class="cover-dot dot-teal"></span> 16+ Data Sources</span>
+      <span><span class="cover-dot dot-orange"></span> 30-Day Launch</span>
+    </div>
+  </div>
+  <div class="cover-ghost">30D</div>
+  <div class="cover-bottom">Powered by last30days-skill v3.3.2 &middot; github.com/roman-ryzenadvanced/last30days-skill</div>
+</div>
+
+</body>
+</html>
